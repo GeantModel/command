@@ -16,12 +16,11 @@
 #include "G4Box.hh"
 
 #include "G4VUserDetectorConstruction.hh"
-#include "DetGeometryMessenger.hh"
+#include "Command.hh"
 
 class G4VPhysicalVolume;
 class G4LogicalVolume;
-class DetGeometryMessenger;
-
+class Command;
 
 class DetGeometry  : public G4VUserDetectorConstruction
 {
@@ -41,7 +40,7 @@ private:
     G4double boxXsize;
     G4int boxYsize;
     G4Material * box_material;
-    DetGeometryMessenger* detGeometryMessenger;
+    Command* detCommand;
 public:
     void setBoxXsize(G4double newValueX);
     void setBoxYsize(G4int newValueY);

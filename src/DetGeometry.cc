@@ -6,12 +6,12 @@
 #include "DetGeometry.hh"
 #include "G4VisAttributes.hh"
 
+
 DetGeometry::DetGeometry() {
-    detGeometryMessenger = new DetGeometryMessenger(this);
+    detCommand = new Command(this);
     world_sizeXYZ   = 50 * m;
     nist            = G4NistManager::Instance();
     world_mat       = nist->FindOrBuildMaterial("G4_AIR");
-
     boxXsize = 10*cm;
     boxYsize = 15*cm;
     box_material = nist->FindOrBuildMaterial("G4_BGO");
@@ -19,7 +19,7 @@ DetGeometry::DetGeometry() {
 }
 
 DetGeometry::~DetGeometry() {
-    delete detGeometryMessenger;
+    delete detCommand;
 }
 
 G4VPhysicalVolume* DetGeometry::Construct(){

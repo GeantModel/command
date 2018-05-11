@@ -19,7 +19,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 
-add_executable(PW_1_Geometry main.cc ${sources} ${headers} src/DetGeometryMessenger.cc include/DetGeometryMessenger.hh)
+add_executable(PW_1_Geometry main.cc ${sources} ${headers} include/Command.hh src/Command.cc include/DetGeometry.hh )
 target_link_libraries(PW_1_Geometry ${Geant4_LIBRARIES})
 
 

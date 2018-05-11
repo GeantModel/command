@@ -15,15 +15,20 @@
 
 class G4ParticleGun;
 class G4Event;
+class Command;
 
 class PrimaryGen : public G4VUserPrimaryGeneratorAction
 {
 private:
     G4ParticleGun*  gun;
+    G4double Energy;
+    Command *detCommand;
+
 public:
     PrimaryGen();
     virtual ~PrimaryGen();
     virtual void GeneratePrimaries(G4Event*);
+    void setEnergy(double newEnergy);
 };
 
 #endif //CPROJECT_PRIMARYGEN_HH
