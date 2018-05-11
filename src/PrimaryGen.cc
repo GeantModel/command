@@ -14,7 +14,7 @@ void PrimaryGen::GeneratePrimaries(G4Event* anEvent)
 {
     gun->SetParticleDefinition(G4Gamma::GammaDefinition());
     gun->SetParticleEnergy(0.662*MeV);
-    gun->SetParticlePosition(G4ThreeVector(0,-10*mm,0.));
-    gun->SetParticleMomentumDirection(G4ThreeVector(0, 1, 0));
+    gun->SetParticlePosition(G4ThreeVector(-20*cm,0,0));
+    gun->SetParticleMomentumDirection(G4ThreeVector(1, 0, 0));
     gun->GeneratePrimaryVertex(anEvent);
 }

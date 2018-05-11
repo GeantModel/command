@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 project(PW_1_Geometry)
 
 
-set(CMAKE_PREFIX_PATH /home/idalov/geant4/geant4-install)
+set(CMAKE_PREFIX_PATH /home/student/geant4/geant4-install)
 
 option(WITH_GEANT4_UIVIS "Build project with Geant4 UI and Vis drivers" ON)
 if(WITH_GEANT4_UIVIS)
@@ -19,7 +19,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 
-add_executable(PW_1_Geometry main.cc ${sources} ${headers})
+add_executable(PW_1_Geometry main.cc ${sources} ${headers} src/DetGeometryMessenger.cc include/DetGeometryMessenger.hh)
 target_link_libraries(PW_1_Geometry ${Geant4_LIBRARIES})
 
 
